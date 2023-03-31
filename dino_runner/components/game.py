@@ -1,6 +1,6 @@
 import pygame
 
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
+from dino_runner.utils.constants import BG, CLOUD, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
 
 
 class Game:
@@ -14,7 +14,11 @@ class Game:
         self.game_speed = 20
         self.x_pos_bg = 0
         self.y_pos_bg = 380
-
+        self.x_pos_cloud1 = 900
+        self.y_pos_cloud1 = 80
+        self.x_pos_cloud2 = 250
+        self.y_pos_cloud2 = 80-34
+        #self.y_pos_bg = 540
     def run(self):
         # Game loop: events - update - draw
         self.playing = True
@@ -40,10 +44,29 @@ class Game:
         pygame.display.flip()
 
     def draw_background(self):
+        # dibuja el piso
         image_width = BG.get_width()
         self.screen.blit(BG, (self.x_pos_bg, self.y_pos_bg))
+        #debug
+        #print(self.x_pos_bg, end = " ")
         self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
+        #debug
+        #print(image_width + self.x_pos_bg, end=" ")
         if self.x_pos_bg <= -image_width:
-            self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
+            # esta linea es inutil
+            #self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
             self.x_pos_bg = 0
-        self.x_pos_bg -= self.game_speed
+            self.x_pos_cloud1 = 900
+            self.x_pos_cloud2 = 250
+        #actual line of code that changes self.x_pos_bg
+        self.x_pos_bg -= self.game_speed       
+        self.screen.blit(CLOUD, (self.x_pos_cloud1, self.y_pos_cloud1))
+        self.screen.blit(CLOUD, (image_width + self.x_pos_cloud1, self.y_pos_cloud1))
+        self.screen.blit(CLOUD, (self.x_pos_cloud2, self.y_pos_cloud2))
+        self.screen.blit(CLOUD, (image_width + self.x_pos_cloud2, self.y_pos_cloud2))
+        #debug
+        #print(self.x_pos_cloud1, self.x_pos_cloud2)
+        self.x_pos_cloud1 -= self.game_speed
+        self.x_pos_cloud2 -= self.game_speed
+        
+    
