@@ -16,6 +16,16 @@ RUNNING = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
 ]
 
+RUNNING_SKIN1 = [
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1-aren32.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2-aren32.png"))
+]
+
+RUNNING_SKIN2 = [
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1-MarioHat.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2-MarioHat.png"))
+]
+
 RUNNING_SHIELD = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1Shield.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),

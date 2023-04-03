@@ -1,5 +1,5 @@
 from pygame.sprite import Sprite
-from dino_runner.utils.constants import JUMPING, RUNNING, DUCKING
+from dino_runner.utils.constants import JUMPING, RUNNING, RUNNING_SKIN1, RUNNING_SKIN2, DUCKING
 import pygame
 
 class Dinosaur(Sprite):
@@ -21,7 +21,9 @@ class Dinosaur(Sprite):
         self.jump_vel = self.JUMP_VEL
     
     def run(self):
-        self.image = RUNNING[0] if self.step_index <5 else RUNNING[1]
+        #self.image = RUNNING[0] if self.step_index <5 else RUNNING[1]
+        #self.image = RUNNING_SKIN1[0] if self.step_index < 5 else RUNNING_SKIN1[1]
+        self.image = RUNNING_SKIN2[0] if self.step_index < 5 else RUNNING_SKIN2[1]
         self.rect = self.image.get_rect()
         self.rect.x = self.POS_X
         self.rect.y = self.POS_Y
