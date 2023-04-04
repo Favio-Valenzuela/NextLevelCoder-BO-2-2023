@@ -22,8 +22,8 @@ class Dinosaur(Sprite):
     
     def run(self):
         #self.image = RUNNING[0] if self.step_index <5 else RUNNING[1]
-        #self.image = RUNNING_SKIN1[0] if self.step_index < 5 else RUNNING_SKIN1[1]
-        self.image = RUNNING_SKIN2[0] if self.step_index < 5 else RUNNING_SKIN2[1]
+        self.image = RUNNING_SKIN1[0] if self.step_index < 5 else RUNNING_SKIN1[1]
+        #self.image = RUNNING_SKIN2[0] if self.step_index < 5 else RUNNING_SKIN2[1]
         self.rect = self.image.get_rect()
         self.rect.x = self.POS_X
         self.rect.y = self.POS_Y
