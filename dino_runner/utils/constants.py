@@ -94,3 +94,7 @@ COLORS = {
     "black": (0,0,0),
     "white": (255,255,255)
 }
+
+MUSIC = [
+    os.path.join(IMG_DIR, "Music/Powerful-Trap-.mp3")
+]

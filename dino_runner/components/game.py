@@ -1,7 +1,7 @@
 import pygame
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
 
-from dino_runner.utils.constants import BG, CLOUD, COLORS, ICON, RUNNING, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
+from dino_runner.utils.constants import BG, CLOUD, COLORS, ICON, MUSIC, RUNNING, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
 from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.text_utils import TextUtils
 class Game:
@@ -128,4 +128,11 @@ class Game:
                 exit()
             elif event.type == pygame.KEYDOWN:
                 self.obstacle_manager.reset_obstacles()
-                self.run()
+                self.play_music()
+                self.run()                
+
+    def play_music(self):
+        #print("Music playing")
+        pygame.mixer.init()
+        pygame.mixer.music.load(MUSIC[0])
+        pygame.mixer.music.play()
