@@ -16,3 +16,10 @@ class TextUtils:
         text_rect = text.get_rect()
         text_rect.center = (width, height)
         return text, text_rect
+    
+    def get_shield_time(self, time_to_show):
+        font = pygame.font.Font(FONT_STYLE[1], 20)
+        text = font.render(str(time_to_show), True, COLORS["black"])
+        text_rect = text.get_rect()
+        text_rect.center = (1000,380)
+        return text, text_rect
